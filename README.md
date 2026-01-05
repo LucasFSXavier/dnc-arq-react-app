@@ -1,16 +1,81 @@
-# React + Vite
+# DNC Arq React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação front-end em React (Vite) que apresenta um site institucional com páginas de **Home**, **Sobre**, **Projetos** e **Contato**. O conteúdo textual e os projetos são carregados via API externa, com suporte a **PT-BR** e **EN**.
 
-Currently, two official plugins are available:
+## ✨ Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Rotas com React Router** para Home, Sobre, Projetos e Contato.
+- **Conteúdo multilíngue** (PT-BR/EN) persistido no `localStorage`.
+- **Listagem de projetos** consumida via API pública.
+- **Favoritos de projetos** persistidos no `sessionStorage`.
+- **Formulário de contato** integrado ao Web3Forms.
+- **Layout responsivo** com menu móvel.
 
-## React Compiler
+## 🧱 Tecnologias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [React 19](https://react.dev/)
+- [Vite 7](https://vite.dev/)
+- [React Router 7](https://reactrouter.com/)
+- ESLint
 
-## Expanding the ESLint configuration
+## 🚀 Como executar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Pré-requisitos
+
+- Node.js 18+ (recomendado)
+- npm
+
+### Instalação
+
+```bash
+npm install
+```
+
+### Ambiente de desenvolvimento
+
+```bash
+npm run dev
+```
+
+A aplicação estará disponível em `http://localhost:5173`.
+
+### Build de produção
+
+```bash
+npm run build
+```
+
+### Preview do build
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## 🔌 Integrações externas
+
+- **API de conteúdo**: `https://dnc-react-api.vercel.app/files/`
+  - Endpoints usados: `webtext` (textos) e `projects` (lista de projetos).
+- **Web3Forms**: envio do formulário em `src/components/ContactForm/ContactForm.jsx`.
+
+> ⚠️ Observação: o *access key* do Web3Forms está atualmente embutido no código.
+
+## 🗂️ Estrutura de pastas (principais)
+
+```
+src/
+  components/     # Componentes de UI reutilizáveis
+  contexts/       # Contextos (AppContext)
+  pages/          # Páginas de rota
+  services/       # Integrações com APIs
+  assets/         # Imagens e ícones
+```
+
+## 📄 Licença
+
+Este projeto é apenas para fins educacionais/demonstração.
